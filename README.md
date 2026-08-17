@@ -32,4 +32,8 @@ A full-stack web application for managing doctor profiles, scheduling appointmen
 * **JSON / Database** (Appointments & Doctor Records Management)
 
 ---
-# healthcare-management
+## 🔑 Admin Credentials (For Testing)
+
+* **Admin Password:** `humayra123`
+
+---
