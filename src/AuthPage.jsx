@@ -3,6 +3,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const AuthPage = () => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -37,7 +38,7 @@ const AuthPage = () => {
     try {
       if (isLogin) {
         
-        const res = await axios.post("http://localhost:3000/api/login", {
+        const res = await axios.post(`${API_URL}/api/login`, {
           email: formData.email,
           password: formData.password,
         });
@@ -58,7 +59,7 @@ const AuthPage = () => {
       } else {
         
         
-        const res = await axios.post("http://localhost:3000/api/register", {
+        const res = await axios.post(`${API_URL}/api/register`, {
           name: formData.name,
           email: formData.email,
           password: formData.password,

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const Appointment = () => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
   const location = useLocation();
   const preSelectedDoctor = location.state?.doctorName || "";
 
@@ -36,7 +37,7 @@ const Appointment = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:3000/api/appointments", {
+      const response = await fetch(`${API_URL}/api/appointments`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

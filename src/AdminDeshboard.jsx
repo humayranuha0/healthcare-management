@@ -6,6 +6,7 @@ import AdminMessages from "./AdminMessage";
 import AdminSidebar from "./AdminSidebar";
 
 const AdminDashboard = ({ doctorsData = [] }) => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL
   const [appointments, setAppointments] = useState([]);
   const [activeTab, setActiveTab] = useState("dashboard");
   const [doctors, setDoctors] = useState(
@@ -28,7 +29,7 @@ const AdminDashboard = ({ doctorsData = [] }) => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/appointments/${id}`, {
+      const res = await fetch(`${API_URL}/api/appointments/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -49,7 +50,7 @@ const AdminDashboard = ({ doctorsData = [] }) => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/appointments")
+    fetch(`${API_URL}/api/appointments`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -67,7 +68,7 @@ const AdminDashboard = ({ doctorsData = [] }) => {
 
   const fetchDoctors = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/api/admin");
+      const response = await axios.get(`${API_URL}/api/admin`);
       if (Array.isArray(response.data)) {
         setDoctors(response.data);
       } else {

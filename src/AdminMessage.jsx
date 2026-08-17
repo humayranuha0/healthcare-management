@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 const AdminMessages = () => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/messages")
+    fetch(`${API_URL}/api/messages`)
       .then((res) => res.json())
       .then((data) => setMessages(data))
       .catch((err) => console.error("Error fetching messages:", err));

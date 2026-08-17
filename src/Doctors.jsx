@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const DoctorCards = () => {
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
   const [doctors, setDoctors] = useState([]);
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const DoctorCards = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/doctors")
+    fetch(`${API_URL}/api/doctors`)
       .then((res) => res.json())
       .then((data) => setDoctors(data))
       .catch((err) => console.error("Error loading doctors:", err));

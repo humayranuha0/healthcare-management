@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 const DoctorDashboard = () => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
   const [appointments, setAppointments] = useState([]);
   const [isAvailable, setIsAvailable] = useState(true);
   const [selectedPatient, setSelectedPatient] = useState(null);
@@ -15,14 +16,14 @@ const DoctorDashboard = () => {
   const doctorId = "67890";
 
   useEffect(() => {
-    fetch("http://localhost:3000/api/appointments")
+    fetch(`${API_URL}/api/appointments`)
       .then((res) => res.json())
       .then((data) => setAppointments(data))
       .catch((err) => console.error("Error fetching appointments:", err));
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/appointments/doctors/${doctorId}`)
+    fetch(`${API_URL}/api/appointments/doctors/${doctorId}`)
       .then((res) => res.json())
       .then((data) => setMyAppointments(data));
   }, [doctorId]);
@@ -32,7 +33,7 @@ const DoctorDashboard = () => {
     setIsAvailable(newStatus);
 
     try {
-      await fetch(`http://localhost:3000/api/doctors/${doctorId}`, {
+      await fetch(`${API_URL}/api/doctors/${doctorId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ isAvailable: newStatus }),
@@ -44,7 +45,7 @@ const DoctorDashboard = () => {
 
   const handleStatusUpdate = async (id, newStatus) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/appointments/${id}`, {
+      const res = await fetch(`${API_URL}/api/appointments/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
@@ -66,7 +67,7 @@ const DoctorDashboard = () => {
     e.preventDefault();
     try {
       const res = await fetch(
-        `http://localhost:3000/api/appointments/${selectedPatient._id}`,
+       `${API_URL}/api/appointments/${selectedPatient._id}`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

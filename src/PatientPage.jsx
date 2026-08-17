@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Lists from "./List";
 
 const PatientsPage = ({ doctorsData, fetchDoctors }) => {
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
   const [activeTab, setActiveTab] = useState("appointments");
   const [appointments, setAppointments] = useState([]);
   const [filterStatus, setFilterStatus] = useState("All");
@@ -10,7 +11,7 @@ const PatientsPage = ({ doctorsData, fetchDoctors }) => {
   const [selectedPrescription, setSelectedPrescription] = useState(null);
   useEffect(() => {
     
-    fetch("http://localhost:3000/api/patient/appointments")
+    fetch(`${API_URL}/api/patient/appointments`)
       .then((res) => res.json())
       .then((data) => {
         if (Array.isArray(data)) {
@@ -25,7 +26,7 @@ const PatientsPage = ({ doctorsData, fetchDoctors }) => {
       });
   }, []);
   useEffect(() => {
-    fetch("http://localhost:3000/api/appointments")
+    fetch(`${API_URL}/api/appointments`)
       .then((res) => res.json())
       .then((data) => setAppointments(data))
       .catch((err) => console.error("Error fetching appointments:", err));
@@ -35,7 +36,7 @@ const PatientsPage = ({ doctorsData, fetchDoctors }) => {
     if (window.confirm("Are you sure you want to cancel this appointment?")) {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/appointments/${id}`,
+         `${API_URL}/api/appointments/${id}`,
           {
             method: "PUT",
             headers: { "Content-Type": "application/json" },

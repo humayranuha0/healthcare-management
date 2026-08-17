@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Lists = ({ isAdmin, doctors = [], onAddClick, fetchDoctors }) => {
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
   const [editingDoctor, setEditingDoctor] = useState(null);
   const navigate = useNavigate();
 
@@ -19,7 +20,7 @@ const Lists = ({ isAdmin, doctors = [], onAddClick, fetchDoctors }) => {
   const handleDelete = async (id) => {
     if (window.confirm("Are you sure you want to delete this doctor?")) {
       try {
-        await axios.delete(`http://localhost:3000/api/admin/${id}`);
+        await axios.delete(`${API_URL}/api/admin/${id}`);
 
         fetchDoctors();
       } catch (error) {
@@ -35,7 +36,7 @@ const Lists = ({ isAdmin, doctors = [], onAddClick, fetchDoctors }) => {
     e.preventDefault();
     try {
       await axios.post(
-        `http://localhost:3000/api/admin/${editingDoctor._id}`,
+      `${API_URL}/api/admin/${editingDoctor._id}`,
         editingDoctor,
       );
       setEditingDoctor(null);

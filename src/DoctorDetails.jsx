@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 const DoctorDetails = () => {
+    const API_URL = import.meta.env.VITE_API_BASE_URL;
   const { id } = useParams();
   const navigate = useNavigate();
   const [doctor, setDoctor] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/api/doctors/${id}`)
+    fetch(`${API_URL}/api/doctors/${id}`)
       .then((res) => res.json())
       .then((data) => setDoctor(data))
       .catch((err) => console.error(err));
