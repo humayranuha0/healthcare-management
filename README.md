@@ -3,6 +3,12 @@
 A full-stack web application for managing doctor profiles, scheduling appointments, and handling patient queries. Built with a modern front-end interface and a robust RESTful API back-end.
 
 ---
+# Healthcare Management System
+
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Click_Here-brightgreen?style=for-the-badge&logo=vercel)](https://healthcare-management-t6jk.vercel.app/)
+
+## 🌐 Live Website
+🔗 **[Healthcare Management System Live App](https://healthcare-management-t6jk.vercel.app/)**
 
 ## 🚀 Features
 
