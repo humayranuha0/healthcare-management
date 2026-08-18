@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import useScrollReveal from "./useScrollReveal";
 
+
 const Doctor = () => {
   useScrollReveal();
   const doctorsList = [
@@ -90,12 +91,13 @@ const Doctor = () => {
                   </div>
 
                   <div className="d-flex justify-content-center gap-2">
-                    <button
-                      className="btn btn-primary btn-sm rounded-pill px-4 py-2 btn-hover-pulse"
-                      onClick={() => handleBookNow && handleBookNow(doctor)}
-                    >
-                      Book <i className="bi bi-calendar-event ms-1"></i>
-                    </button>
+                 <Link
+                            to="/book-appointment"
+                            className="btn btn-primary rounded-pill px-3 py-2 btn-sm"
+                          >
+                            Book <i className="bi bi-arrow-right ms-1"></i>
+                          </Link>
+                            
                   </div>
                 </div>
               </div>

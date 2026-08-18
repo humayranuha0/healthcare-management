@@ -4,12 +4,11 @@ const FloatingMenu = ({ activeTab, setActiveTab }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
-    { id: "dashboard", label: "Dashboard", icon: "📊" },
-    { id: "appointments", label: "Appointments", icon: "📅" },
-    { id: "doctors", label: "Doctor Directory", icon: "👨‍⚕️" },
-    { id: "messages", label: "Patient Messages", icon: "💬" },
-  ];
-
+  { id: "dashboard", label: "Dashboard", icon: <i className="bi bi-grid-1x2-fill"></i> },
+  { id: "appointments", label: "Appointments", icon: <i className="bi bi-calendar-event"></i> },
+  { id: "doctors", label: "Doctor Directory", icon: <i className="bi bi-person-badge"></i> },
+  { id: "messages", label: "Patient Messages", icon: <i className="bi bi-chat-dots-fill"></i> },
+];
   return (
     <div
       className="d-md-none position-fixed bottom-0 end-0 p-3"
