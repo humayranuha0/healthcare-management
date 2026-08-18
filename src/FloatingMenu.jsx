@@ -11,7 +11,10 @@ const FloatingMenu = ({ activeTab, setActiveTab }) => {
   ];
 
   return (
-    <div className="d-md-none position-fixed bottom-0 end-0 p-3" style={{ zIndex: 1050 }}>
+    <div
+      className="d-md-none position-fixed bottom-0 end-0 p-3"
+      style={{ zIndex: 1050 }}
+    >
       {isOpen && (
         <div className="bg-white p-2 rounded-3 shadow-lg mb-2 d-flex flex-column gap-2 border">
           {menuItems.map((item) => (
@@ -36,11 +39,11 @@ const FloatingMenu = ({ activeTab, setActiveTab }) => {
         className="btn btn-primary rounded-circle shadow p-3 d-flex align-items-center justify-content-center ms-auto"
         style={{ width: "50px", height: "50px" }}
       >
-       {isOpen ? (
-  <i className="bi bi-x-lg fs-4"></i>
-) : (
-  <i className="bi bi-gear-fill fs-4"></i>
-)}
+        {isOpen ? (
+          <i className="bi bi-x-lg fs-4"></i>
+        ) : (
+          <i className="bi bi-gear-fill fs-4"></i>
+        )}
       </button>
     </div>
   );

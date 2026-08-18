@@ -7,7 +7,7 @@ import AdminSidebar from "./AdminSidebar";
 import FloatingMenu from "./FloatingMenu";
 
 const AdminDashboard = ({ doctorsData = [] }) => {
-  const API_URL = import.meta.env.VITE_API_BASE_URL
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
   const [appointments, setAppointments] = useState([]);
   const [activeTab, setActiveTab] = useState("dashboard");
   const [doctors, setDoctors] = useState(
@@ -89,16 +89,15 @@ const AdminDashboard = ({ doctorsData = [] }) => {
   return (
     <div className="container-fluid bg-light min-vh-100 p-4">
       <div className="d-flex">
-       <div className="d-none d-md-block">
-    <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
-  </div>
+        <div className="d-none d-md-block">
+          <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        </div>
 
         <div className="flex-grow-1 p-4 overflow-hidden">
           <div className="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm">
             <h4 className="m-0 text-primary fw-bold">
               <i className="fa-solid fa-tooth me-2"></i>Glowdent Admin
             </h4>
-           
           </div>
 
           {activeTab === "dashboard" && (

@@ -5,18 +5,15 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
-  
   const user = JSON.parse(localStorage.getItem("user"));
 
-  
-  
   const getDashboardPath = () => {
     if (user?.role === "admin") return "/admin";
     if (user?.role === "doctor") return "/doctors";
     if (user?.role === "patient") return "/patients";
-    return "/dashboard"; 
+    return "/dashboard";
   };
-  
+
   const handleLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
@@ -25,7 +22,6 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg bg-white py-3 border-bottom">
       <div className="container">
-        
         <Link
           className="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2"
           to="/"
@@ -34,7 +30,6 @@ const Navbar = () => {
           <span>Glowdent</span>
         </Link>
 
-        
         <button
           className="navbar-toggler"
           type="button"
@@ -45,7 +40,6 @@ const Navbar = () => {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        
         <div
           className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
           id="navbarNav"
@@ -114,9 +108,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          
           <div className="d-flex align-items-center gap-2">
-            
             {user ? (
               <>
                 <Link
@@ -137,9 +129,7 @@ const Navbar = () => {
                 </button>
               </>
             ) : (
-              
               <>
-                
                 <Link
                   to="/login"
                   className="btn btn-outline-primary rounded-pill px-3 py-1 fw-semibold small"
@@ -147,7 +137,6 @@ const Navbar = () => {
                   Login
                 </Link>
 
-                
                 <Link
                   to="/register"
                   className="btn btn-primary rounded-pill px-3 py-1 fw-semibold small"
@@ -157,7 +146,6 @@ const Navbar = () => {
               </>
             )}
 
-            
             <Link
               to="/book-appointment"
               className="btn btn-primary rounded-pill px-3 py-2 btn-sm"

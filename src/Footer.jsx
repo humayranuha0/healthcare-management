@@ -20,31 +20,40 @@ const Footer = () => {
             </p>
           </div>
 
-        <div className="col-lg-2 col-md-6">
-  <h6 className="fw-bold text-white mb-3">Quick Links</h6>
-  <ul className="list-unstyled text-secondary small d-flex flex-column gap-2">
-    <li>
-      <Link className="text-secondary text-decoration-none" to="/">
-        Home
-      </Link>
-    </li>
-    <li>
-      <Link className="text-secondary text-decoration-none" to="/about">
-        About Us
-      </Link>
-    </li>
-    <li>
-      <Link className="text-secondary text-decoration-none" to="/services">
-        Services
-      </Link>
-    </li>
-    <li>
-      <Link className="text-secondary text-decoration-none" to="/doctorsList">
-        Doctors
-      </Link>
-    </li>
-  </ul>
-</div>
+          <div className="col-lg-2 col-md-6">
+            <h6 className="fw-bold text-white mb-3">Quick Links</h6>
+            <ul className="list-unstyled text-secondary small d-flex flex-column gap-2">
+              <li>
+                <Link className="text-secondary text-decoration-none" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-secondary text-decoration-none"
+                  to="/about"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-secondary text-decoration-none"
+                  to="/services"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="text-secondary text-decoration-none"
+                  to="/doctorsList"
+                >
+                  Doctors
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           <div className="col-lg-3 col-md-6">
             <h6 className="fw-bold text-white mb-3">Our Services</h6>
