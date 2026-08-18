@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-lg bg-white py-3 border-bottom">
+    <nav className="navbar navbar-expand-lg bg-white py-3 border-bottom sticky-top">
       <div className="container">
         <Link
           className="navbar-brand fw-bold fs-4 d-flex align-items-center gap-2"
