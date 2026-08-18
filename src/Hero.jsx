@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   
@@ -34,13 +35,12 @@ const Hero = () => {
 
             
             <div className="d-flex align-items-center gap-3 mb-4">
-              <a
-                href="/book-appointment"
-                className="btn btn-primary rounded-pill px-4 py-2"
-              >
-                Book an Appointment <i className="bi bi-arrow-right ms-1"></i>
-              </a>
-
+               <Link
+              to="/book-appointment"
+              className="btn btn-primary rounded-pill px-3 py-2 btn-sm"
+            >
+              Book Appointment <i className="bi bi-arrow-right ms-1"></i>
+            </Link>
               
               <button
                 type="button"

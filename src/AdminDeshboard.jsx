@@ -4,6 +4,7 @@ import AddDoctorForm from "./DoctorForm";
 import axios from "axios";
 import AdminMessages from "./AdminMessage";
 import AdminSidebar from "./AdminSidebar";
+import FloatingMenu from "./FloatingMenu";
 
 const AdminDashboard = ({ doctorsData = [] }) => {
   const API_URL = import.meta.env.VITE_API_BASE_URL
@@ -88,14 +89,16 @@ const AdminDashboard = ({ doctorsData = [] }) => {
   return (
     <div className="container-fluid bg-light min-vh-100 p-4">
       <div className="d-flex">
-        <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+       <div className="d-none d-md-block">
+    <AdminSidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+  </div>
 
         <div className="flex-grow-1 p-4 overflow-hidden">
           <div className="d-flex justify-content-between align-items-center mb-4 bg-white p-3 rounded shadow-sm">
             <h4 className="m-0 text-primary fw-bold">
               <i className="fa-solid fa-tooth me-2"></i>Glowdent Admin
             </h4>
-            <span className="fw-semibold text-secondary">Dr. Admin</span>
+           
           </div>
 
           {activeTab === "dashboard" && (
@@ -131,8 +134,8 @@ const AdminDashboard = ({ doctorsData = [] }) => {
 
               <div className="card border-0 shadow-sm p-4 bg-white mb-4">
                 <h5 className="fw-bold mb-3">Recent Appointments</h5>
-                <div className="table-responsive">
-                  <table className="table align-middle">
+                <div className="table-responsive mx-n2 mx-md-0">
+                  <table className="table align-middle w-100">
                     <thead className="table-light">
                       <tr>
                         <th>Patient</th>
@@ -145,14 +148,14 @@ const AdminDashboard = ({ doctorsData = [] }) => {
                     <tbody>
                       {appointments.map((item) => (
                         <tr key={item._id}>
-                          <td>
+                          <td className="text-nowrap">
                             <div className="fw-bold">{item.fullName}</div>
                             <small className="text-muted">{item.phone}</small>
                           </td>
-                          <td>{item.doctor}</td>
-                          <td>{item.service}</td>
-                          <td>{item.date}</td>
-                          <td>
+                          <td className="text-nowrap">{item.doctor}</td>
+                          <td className="text-nowrap">{item.service}</td>
+                          <td className="text-nowrap">{item.date}</td>
+                          <td className="text-nowrap">
                             <select
                               value={item.status || "Pending"}
                               onChange={(e) =>
@@ -198,8 +201,8 @@ const AdminDashboard = ({ doctorsData = [] }) => {
           {activeTab === "appointments" && (
             <div className="card border-0 shadow-sm p-4 bg-white mb-4">
               <h5 className="fw-bold mb-3">All Appointments</h5>
-              <div className="table-responsive">
-                <table className="table align-middle">
+              <div className="table-responsive mx-n2 mx-md-0">
+                <table className="table align-middle w-100">
                   <thead className="table-light">
                     <tr>
                       <th>Patient</th>
@@ -212,14 +215,14 @@ const AdminDashboard = ({ doctorsData = [] }) => {
                   <tbody>
                     {appointments.map((item) => (
                       <tr key={item._id}>
-                        <td>
+                        <td className="text-nowrap">
                           <div className="fw-bold">{item.fullName}</div>
                           <small className="text-muted">{item.phone}</small>
                         </td>
-                        <td>{item.doctor}</td>
-                        <td>{item.service}</td>
-                        <td>{item.date}</td>
-                        <td>
+                        <td className="text-nowrap">{item.doctor}</td>
+                        <td className="text-nowrap">{item.service}</td>
+                        <td className="text-nowrap">{item.date}</td>
+                        <td className="text-nowrap">
                           <select
                             value={item.status || "Pending"}
                             onChange={(e) =>
@@ -278,6 +281,7 @@ const AdminDashboard = ({ doctorsData = [] }) => {
             </div>
           )}
         </div>
+        <FloatingMenu activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ A full-stack web application for managing doctor profiles, scheduling appointmen
 * **Appointment Scheduling:** Book and track doctor appointments seamlessly.
 * **Doctor Dashboard:** Manage incoming patient appointments and requests dynamically.
 * **Admin Management:** Add new doctors via an interactive form with instant data validation.
-* **Custom UI Modals & Alerts:** Modern notification interface built with custom HTML5 `<dialog>` and styled components.
 
 ---
 
