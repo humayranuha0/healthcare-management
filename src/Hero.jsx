@@ -2,46 +2,40 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  
   const [showVideo, setShowVideo] = useState(false);
 
   return (
     <section className="py-5 bg-light">
       <div className="container">
         <div className="row align-items-center g-4">
-          
           <div className="col-lg-6">
-            
-            <div className="mb-3">
-              <span className="badge bg-primary rounded-pill px-3 py-2 me-2">
-                New
+            <div className="mb-3 d-flex align-items-center gap-2">
+              <span className="badge bg-primary rounded-pill px-3 py-2">
+                Smart Healthcare
               </span>
               <span className="text-secondary fw-semibold small">
-                Trusted by 10K+ Patients
+                Modern Dental Care Platform
               </span>
             </div>
 
-            
             <h1 className="display-4 fw-bold mb-3">
               Healthy Smiles, <br />
               <span className="text-primary">Happier Lives.</span>
             </h1>
 
-            
             <p className="lead text-muted mb-4 fs-6">
               Gentle care, advanced technology, and a team that truly cares.
               Your smile is our absolute priority.
             </p>
 
-            
             <div className="d-flex align-items-center gap-3 mb-4">
-               <Link
-              to="/book-appointment"
-              className="btn btn-primary rounded-pill px-3 py-2 btn-sm"
-            >
-              Book Appointment <i className="bi bi-arrow-right ms-1"></i>
-            </Link>
-              
+              <Link
+                to="/book-appointment"
+                className="btn btn-primary rounded-pill px-3 py-2 btn-sm"
+              >
+                Book Appointment <i className="bi bi-arrow-right ms-1"></i>
+              </Link>
+
               <button
                 type="button"
                 className="btn btn-white bg-white border rounded-pill px-4 py-2 shadow-sm d-flex align-items-center gap-2"
@@ -52,7 +46,6 @@ const Hero = () => {
               </button>
             </div>
 
-            
             <div className="d-flex gap-4 pt-2">
               <div className="d-flex align-items-center gap-2 text-muted fw-semibold">
                 <i className="bi bi-check-circle-fill text-primary"></i>
@@ -65,7 +58,6 @@ const Hero = () => {
             </div>
           </div>
 
-          
           <div className="col-lg-6 position-relative">
             <div className="position-relative">
               <img
@@ -75,7 +67,6 @@ const Hero = () => {
                 style={{ maxHeight: "480px" }}
               />
 
-              
               <div className="position-absolute bottom-0 start-0 m-3 p-3 bg-white rounded-4 shadow-lg d-flex align-items-center gap-3">
                 <div className="bg-primary-subtle text-primary p-3 rounded-circle d-flex align-items-center justify-content-center">
                   <i className="bi bi-emoji-smile fs-3"></i>
@@ -92,7 +83,6 @@ const Hero = () => {
         </div>
       </div>
 
-      
       {showVideo && (
         <div
           className="modal show d-block"
@@ -101,7 +91,6 @@ const Hero = () => {
         >
           <div className="modal-dialog modal-lg modal-dialog-centered">
             <div className="modal-content bg-dark border-0 rounded-4 overflow-hidden shadow-lg">
-              
               <div className="modal-header border-0 pb-0">
                 <button
                   type="button"
@@ -110,7 +99,6 @@ const Hero = () => {
                 ></button>
               </div>
 
-              
               <div className="modal-body p-3">
                 <div className="ratio ratio-16x9 rounded-3 overflow-hidden">
                   <iframe
